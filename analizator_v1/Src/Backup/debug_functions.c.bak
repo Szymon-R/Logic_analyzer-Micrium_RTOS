@@ -1,0 +1,7 @@
+#include "debug_functions.h"
+
+
+void assert_no_error(void)
+{
+	;
+}

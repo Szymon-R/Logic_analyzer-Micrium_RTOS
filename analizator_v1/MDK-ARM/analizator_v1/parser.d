@@ -1,0 +1,12 @@
+analizator_v1\parser.o: ..\Src\parser.c
+analizator_v1\parser.o: ../Inc/parser.h
+analizator_v1\parser.o: D:\Programy\Keil\ARM\ARMCC\Bin\..\include\stdio.h
+analizator_v1\parser.o: D:\Programy\Keil\ARM\ARMCC\Bin\..\include\time.h
+analizator_v1\parser.o: ../Inc/log.h
+analizator_v1\parser.o: ../Inc/list.h
+analizator_v1\parser.o: D:\Programy\Keil\ARM\ARMCC\Bin\..\include\stdint.h
+analizator_v1\parser.o: D:\Programy\Keil\ARM\ARMCC\Bin\..\include\stdarg.h
+analizator_v1\parser.o: D:\Programy\Keil\ARM\ARMCC\Bin\..\include\stdlib.h
+analizator_v1\parser.o: D:\Programy\Keil\ARM\ARMCC\Bin\..\include\cstdlib
+analizator_v1\parser.o: D:\Programy\Keil\ARM\ARMCC\Bin\..\include\cstdio
+analizator_v1\parser.o: D:\Programy\Keil\ARM\ARMCC\Bin\..\include\string.h

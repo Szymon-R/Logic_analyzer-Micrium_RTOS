@@ -1,0 +1,9 @@
+#ifndef TASK_DEBUG_FUNCTIONS_GUARD
+#define TASK_DEBUG_FUNCTIONS_GUARD
+
+#include "os.h"                         // Micrium.Micrium::RTOS:uC/OS Kernel
+#include <stdio.h>
+
+void assert_no_error(void);
+
+#endif

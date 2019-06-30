@@ -1,0 +1,45 @@
+#include "Task_capture_data.h"
+#include "debug_functions.h"
+
+extern OS_ERR os_err;
+OS_TCB Task_CaptureData_TCB;
+
+CPU_STK Task_CaptureData_STK[Task_captureData_stack_size];
+extern TIM_HandleTypeDef htim2;
+
+void Task_captureData_task(void* p_arg)
+{
+	int data_buffer[100];
+	while(DEF_TRUE)
+	{
+		OSTimeDlyHMSM(0,0,0,50,OS_OPT_TIME_HMSM_STRICT,&os_err);
+		HAL_GPIO_TogglePin(LD2_GPIO_Port,LD2_Pin);
+		HAL_TIM_Base_Start_IT(&htim2);
+		
+		HAL_GPIO_ReadPin(
+
+	}
+}
+
+void Task_captureData_init(void(*function)(void* p_arg))
+{
+	OSInit(&os_err);
+	assert_no_error();
+	OSTaskCreate(&Task_CaptureData_TCB,//task control block
+								"Capture data",//string for debugging
+								function,//pointer to the task to be perforemed
+								(void*)0,//pasiing parameters to the task
+								Task_captureData_priority,//task priority
+								Task_CaptureData_STK,//pointer to task's stack
+								0u,//
+								Task_captureData_stack_size,//size of the stack ie elements. 
+								0,//message queue
+								0,//time quanata for this task in round robin
+								0,//extension of TCB, for otherelements like FPU
+								OS_OPT_TASK_STK_CHK,//task specific options
+								&os_err);//error handler
+								
+	assert_no_error();
+	OSStart(&os_err);
+	assert_no_error();
+}
