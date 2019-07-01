@@ -6,15 +6,15 @@
 #include "stm32f4xx_hal.h"
 #include "gpio.h"
 
-#define buffer_size 2000u
+#define buffer_size 200u
 
 
 #define Task_sendData_stack_size 128u
-#define Task_sendData_priority 3u
+#define Task_sendData_priority 4u
 #define Task_sendData_stack_size 128u
 
 #define Task_captureData_stack_size 128u
-#define Task_captureData_priority 1u
+#define Task_captureData_priority 6u
 #define Task_capture_data_stop 0x01
 
 extern OS_FLAG_GRP  DataSending;
@@ -23,6 +23,7 @@ extern OS_FLAG_GRP  DataSending;
 
 extern OS_MUTEX  data_buffer_mutex;
 extern CPU_TS    data_buffer_mutex_ts;
+extern OS_Q   data_pass_queue;
 
 extern OS_ERR os_err;
 

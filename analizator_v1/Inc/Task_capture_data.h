@@ -10,7 +10,5 @@ void Task_captureData_init(void(*function)(void* p_arg));
 void Task_captureData_task(void* p_arg);
 void send_data(uint32_t* data,size_t size);
 void correct_data(uint32_t* data,size_t size);
-void correct_data(uint32_t* data,size_t size);
-
 
 #endif

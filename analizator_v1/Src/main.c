@@ -25,6 +25,7 @@
 #include "gpio.h"
 #include "os.h"                         // Micrium.Micrium::RTOS:uC/OS Kernel
 #include "Task_capture_data.h"
+#include "Task_send_data.h"
 #include "log.h"
 void SystemClock_Config(void);
 
@@ -42,7 +43,14 @@ int main(void)
   MX_TIM2_Init();
 	init_logs();
 	list_init();
-	Task_captureData_init(Task_captureData_task);
+
+
+
+
+		Task_captureData_init(Task_captureData_task);
+		Task_sendData_init(Task_sendData_task);
+
+	OSStart(&os_err);
   while (1)
   {
 		//we should never enter this loop
